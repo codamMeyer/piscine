@@ -1,0 +1,54 @@
+123
+
+1*10² + 2*10^1 + 3*10⁰
+100 + 20 + 3 = 123
+
+810
+
+8*16² + 1*16¹ + 0*16^0
+
+8*256 + 16 + 0
+
+2048 + 16 = 2064
+
+char * number, char * base
+"123"
+
+int char_to_number(char c, char*base)
+{
+    int i = 0;
+    while(base != '\0')
+    {
+        if(c == base[i])
+            return i;
+        ++i;
+    }
+    assert(false);
+    return 0;
+}
+
+int power(int number, int power)
+{
+    if(power == 0)
+        return 1;
+    if(power == 1)
+        return number;
+
+    return  number * power(number, power-1);
+}
+
+1 - find base length
+2 - 
+    int base_size...
+    result = 0
+    current_exponent = 0
+    for(i = lenght-1; i >=0; --i)
+    {
+        char cur_char = number[i];
+        int number = char_to_number(cur_char);
+        result += (number*power(number, current_exponent));
+        
+        ++current_exponent;
+    }
+
+
